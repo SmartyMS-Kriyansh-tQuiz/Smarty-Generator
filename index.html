@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEARN WITH MSKRIYANSH</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: radial-gradient(circle at top left, #1f1c2c, #928dab);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+h1 {
+  background: linear-gradient(90deg, #ff00cc, #333399);
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  font-weight: 800;
+  text-shadow: 0 0 15px rgba(255,255,255,0.6);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 15px #ff00cc; }
+  to { text-shadow: 0 0 25px #3333ff, 0 0 35px #ff00cc; }
+}
+
+.orange-box {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #000;
+  font-weight: bold;
+  padding: 14px 28px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  font-size: 20px;
+}
+
+.card {
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 24px;
+  max-width: 500px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: 0.4s;
+}
+
+.card:hover { transform: scale(1.02); }
+
+input {
+  width: 95%;
+  padding: 16px;
+  margin: 14px 0;
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  background: rgba(255,255,255,0.9);
+  box-shadow: inset 0 3px 8px rgba(0,0,0,0.4);
+}
+
+button, a {
+  display: block;
+  width: 90%;
+  margin: 12px auto;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  font-size: 17px;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  transition: all 0.4s ease;
+}
+
+/* Luxury Buttons */
+.live { background: linear-gradient(45deg, #f12711, #f5af19); color: #fff; box-shadow: 0 5px 20px rgba(241,39,17,0.6); }
+.live:hover { transform: scale(1.08) rotate(-1deg); box-shadow: 0 6px 25px rgba(241,39,17,0.9); }
+
+.recorded { background: linear-gradient(45deg, #00c6ff, #0072ff); color: #fff; box-shadow: 0 5px 20px rgba(0,114,255,0.6); }
+.recorded:hover { transform: scale(1.08) rotate(1deg); box-shadow: 0 6px 25px rgba(0,114,255,0.9); }
+
+.copy { background: linear-gradient(45deg, #56ab2f, #a8e063); color: #fff; box-shadow: 0 5px 20px rgba(86,171,47,0.6); }
+.copy:hover { transform: scale(1.08) rotate(-2deg); box-shadow: 0 6px 25px rgba(86,171,47,0.9); }
+
+.preview { background: linear-gradient(45deg, #f7971e, #ffd200); color: #000; box-shadow: 0 5px 20px rgba(255,210,0,0.6); }
+.preview:hover { transform: scale(1.08) rotate(2deg); box-shadow: 0 6px 25px rgba(255,210,0,0.9); }
+
+.refresh { background: linear-gradient(45deg, #8e2de2, #4a00e0); color: #fff; box-shadow: 0 5px 20px rgba(74,0,224,0.6); }
+.refresh:hover { transform: scale(1.08) rotate(-1deg); box-shadow: 0 6px 25px rgba(74,0,224,0.9); }
+
+.back { background: linear-gradient(45deg, #ff512f, #dd2476); color: #fff; box-shadow: 0 5px 20px rgba(221,36,118,0.6); }
+.back:hover { transform: scale(1.08) rotate(1deg); box-shadow: 0 6px 25px rgba(221,36,118,0.9); }
+
+.option {
+  background: rgba(255,255,255,0.18);
+  cursor: pointer;
+  border: 2px solid #ff66b2;
+  margin: 12px 0;
+  border-radius: 18px;
+  padding: 16px;
+  transition: all 0.4s ease;
+}
+.option:hover { transform: scale(1.05) rotate(-1deg); box-shadow: 0 6px 20px rgba(255,102,178,0.6); }
+
+.option.live-box { background: rgba(255,80,80,0.25); }
+.option.recorded-box { background: rgba(80,255,120,0.25); }
+
+.tag {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 14px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.tag.live { background: crimson; }
+.tag.recorded { background: indigo; }
+
+footer {
+  margin-top: 28px;
+  font-size: 14px;
+  color: #eee;
+}
+footer span { color: #ff4d88; }
+
+.popup {
+  display: none;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.75);
+  justify-content: center; align-items: center;
+}
+.popup-content {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(18px);
+  padding: 28px;
+  border-radius: 24px;
+  text-align: center;
+  width: 80%; max-width: 380px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  color: #fff;
+  animation: popupIn 0.5s ease;
+}
+
+@keyframes popupIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.popup-content h3 { margin-bottom: 18px; font-weight: 800; font-size: 18px; }
+.popup-btn {
+  background: linear-gradient(45deg, #36d1dc, #5b86e5);
+  color: white;
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.popup-btn:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(91,134,229,0.8); }
+
+.video-box {
+  margin-top: 18px;
+  display: none;
+}
+video {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+  </style>
+</head>
+<body>  <h1>LEARN WITH JBKRIYANSH</h1>  <!-- Home Screen -->  <div id="home" class="card">
+    <div class="orange-box">Choose Stream Type</div>
+    <div class="option live-box" onclick="showSection('live')">
+      <h3>📡 Live Stream</h3>
+      <p>Generate links for live streaming content</p>
+    </div>
+    <div class="option recorded-box" onclick="showSection('recorded')">
+      <h3>🎥 Recorded Video</h3>
+      <p>Generate links for recorded video content</p>
+    </div>
+  </div>  <!-- Live Stream Section -->  <div id="live" class="card" style="display:none;">
+    <span class="tag live">🔴 LIVE</span>
+    <h3>Enter Live Stream URL</h3>
+    <input type="text" id="liveUrl" placeholder="https://example.com/index.m3u8">
+    <button class="live" onclick="generate('live')">Generate</button>
+    <button class="copy" onclick="copyLink('live')">Copy</button>
+    <a id="previewLive" class="preview" target="_blank">Preview</a>
+    <button class="refresh" onclick="refresh('live')">Refresh</button>
+    <button class="back" onclick="backHome()">← Back</button>
+    <div class="video-box" id="videoBoxLive">
+      <video id="videoLive" controls></video>
+    </div>
+  </div>  <!-- Recorded Video Section -->  <div id="recorded" class="card" style="display:none;">
+    <span class="tag recorded">📀 RECORDED</span>
+    <h3>Enter Recorded Video URL</h3>
+    <input type="text" id="recordedUrl" placeholder="https://example.com/video.mp4">
+    <button class="recorded" onclick="generate('recorded')">Generate</button>
+    <button class="copy" onclick="copyLink('recorded')">Copy</button>
+    <a id="previewRecorded" class="preview" target="_blank">Preview</a>
+    <button class="refresh" onclick="refresh('recorded')">Refresh</button>
+    <button class="back" onclick="backHome()">← Back</button>
+    <div class="video-box" id="videoBoxRecorded">
+      <video id="videoRecorded" controls></video>
+    </div>
+  </div>  <footer>© LEARN WITH MSKRIYANSH | Made with <span>❤</span></footer>  <!-- Popup -->  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h3 id="popupMessage"></h3>
+      <button class="popup-btn" onclick="closePopup()">BACK</button>
+      <button class="popup-btn" onclick="closePopup()">OK</button>
+    </div>
+  </div>  <script>
+    let finalLinks = { live: "", recorded: "" };
+
+    function showSection(type) {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("live").style.display = "none";
+      document.getElementById("recorded").style.display = "none";
+      document.getElementById(type).style.display = "block";
+    }
+
+    function backHome() {
+      document.getElementById("home").style.display = "block";
+      document.getElementById("live").style.display = "none";
+      document.getElementById("recorded").style.display = "none";
+    }
+
+    function generate(type) {
+      let url = document.getElementById(type + "Url").value;
+      if (!url) { showPopup("Please enter URL"); return; }
+      let encoded = encodeURIComponent(url);
+      finalLinks[type] = `https://learnwithpw-recorded.onrender.com/play?v=${encoded}`;
+      document.getElementById("preview" + capitalize(type)).href = finalLinks[type];
+      document.getElementById("preview" + capitalize(type)).innerText = "Preview";
+
+      document.getElementById("videoBox" + capitalize(type)).style.display = "block";
+      document.getElementById("video" + capitalize(type)).src = url;
+
+      showPopup("Your Link is Generated Successfully✅😎");
+    }
+
+    function copyLink(type) {
+      if (!finalLinks[type]) { showPopup("Generate link first!"); return; }
+      navigator.clipboard.writeText(finalLinks[type]);
+      showPopup("Link is Copied Successfully✅🥳");
+    }
+
+    function refresh(type) {
+      document.getElementById(type + "Url").value = "";
+      finalLinks[type] = "";
+      document.getElementById("preview" + capitalize(type)).href = "#";
+      document.getElementById("preview" + capitalize(type)).innerText = "Preview";
+      document.getElementById("videoBox" + capitalize(type)).style.display = "none";
+      document.getElementById("video" + capitalize(type)).src = "";
+      showPopup("Refreshed 🔄");
+    }
+
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    function showPopup(message) {
+      document.getElementById("popupMessage").innerText = message;
+      document.getElementById("popup").style.display = "flex";
+    }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script></body>
+</html>
