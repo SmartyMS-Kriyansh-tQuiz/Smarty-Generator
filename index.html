@@ -184,7 +184,7 @@ video {
 
   </style>
 </head>
-<body>  <h1>LEARN WITH JBKRIYANSH</h1>  <!-- Home Screen -->  <div id="home" class="card">
+<body>  <h1>LEARN WITH MSKRIYANSH</h1>  <!-- Home Screen -->  <div id="home" class="card">
     <div class="orange-box">Choose Stream Type</div>
     <div class="option live-box" onclick="showSection('live')">
       <h3>📡 Live Stream</h3>
@@ -251,13 +251,13 @@ video {
       document.getElementById("videoBox" + capitalize(type)).style.display = "block";
       document.getElementById("video" + capitalize(type)).src = url;
 
-      showPopup("Your Link is Generated Successfully✅😎");
+      showPopup("Your Link is Generated Successfully✅😚");
     }
 
     function copyLink(type) {
       if (!finalLinks[type]) { showPopup("Generate link first!"); return; }
       navigator.clipboard.writeText(finalLinks[type]);
-      showPopup("Link is Copied Successfully✅🥳");
+      showPopup("Link is Copied🥳");
     }
 
     function refresh(type) {
